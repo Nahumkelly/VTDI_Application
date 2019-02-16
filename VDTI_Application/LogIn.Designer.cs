@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.tbpassword = new System.Windows.Forms.TextBox();
             this.lbusername = new System.Windows.Forms.Label();
             this.lbpassword = new System.Windows.Forms.Label();
             this.tbusername = new System.Windows.Forms.TextBox();
-            this.tbpassword = new System.Windows.Forms.TextBox();
             this.lblogin = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnlogin = new System.Windows.Forms.Button();
             this.btnreset = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -57,6 +57,15 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(329, 100);
             this.tableLayoutPanel1.TabIndex = 0;
+            // 
+            // tbpassword
+            // 
+            this.tbpassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbpassword.Location = new System.Drawing.Point(123, 53);
+            this.tbpassword.Name = "tbpassword";
+            this.tbpassword.PasswordChar = '*';
+            this.tbpassword.Size = new System.Drawing.Size(199, 26);
+            this.tbpassword.TabIndex = 3;
             // 
             // lbusername
             // 
@@ -88,15 +97,6 @@
             this.tbusername.Size = new System.Drawing.Size(202, 26);
             this.tbusername.TabIndex = 2;
             // 
-            // tbpassword
-            // 
-            this.tbpassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbpassword.Location = new System.Drawing.Point(123, 53);
-            this.tbpassword.Name = "tbpassword";
-            this.tbpassword.PasswordChar = '*';
-            this.tbpassword.Size = new System.Drawing.Size(199, 26);
-            this.tbpassword.TabIndex = 3;
-            // 
             // lblogin
             // 
             this.lblogin.AutoSize = true;
@@ -107,16 +107,6 @@
             this.lblogin.TabIndex = 1;
             this.lblogin.Text = "Log In";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::VDTI_Application.Properties.Resources.key2;
-            this.pictureBox1.Location = new System.Drawing.Point(-13, 71);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(125, 132);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
-            // 
             // btnlogin
             // 
             this.btnlogin.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -126,6 +116,7 @@
             this.btnlogin.TabIndex = 3;
             this.btnlogin.Text = "Log In";
             this.btnlogin.UseVisualStyleBackColor = true;
+            this.btnlogin.Click += new System.EventHandler(this.btnlogin_Click);
             // 
             // btnreset
             // 
@@ -137,12 +128,23 @@
             this.btnreset.Text = "Reset";
             this.btnreset.UseVisualStyleBackColor = true;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::VDTI_Application.Properties.Resources.key2;
+            this.pictureBox1.Location = new System.Drawing.Point(-13, 71);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(125, 132);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
+            // 
             // LogIn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Highlight;
             this.ClientSize = new System.Drawing.Size(443, 289);
+            this.ControlBox = false;
             this.Controls.Add(this.btnreset);
             this.Controls.Add(this.btnlogin);
             this.Controls.Add(this.pictureBox1);
