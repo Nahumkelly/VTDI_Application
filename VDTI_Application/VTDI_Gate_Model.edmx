@@ -1,0 +1,402 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="VTDI_Gatelog_dbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Gate_In_Out">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="First_Name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Last_Name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Plate_numder" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="DateTime_IN" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="DateTime_Out" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Vechicletype_ID" Type="int" Nullable="false" />
+          <Property Name="FK_Purpose" Type="int" Nullable="false" />
+          <Property Name="FK_Item_to_Declare" Type="int" Nullable="false" />
+          <Property Name="FK_User" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Gender">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="GenderName" Type="varchar" MaxLength="7" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Item_to_declare">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Purpose_for_visit">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FirstName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="LastName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Email" Type="varchar" MaxLength="50" />
+          <Property Name="Username" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="DateCreated" Type="datetime" Nullable="false" />
+          <Property Name="FK_Gender" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Vechicle_Type">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="V_Name" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Gate_In_Out_To_Item_to_declare">
+          <End Role="Item_to_declare" Type="Self.Item_to_declare" Multiplicity="1" />
+          <End Role="Gate_In_Out" Type="Self.Gate_In_Out" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Item_to_declare">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Gate_In_Out">
+              <PropertyRef Name="FK_Item_to_Declare" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Gate_In_Out_To_user">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="Gate_In_Out" Type="Self.Gate_In_Out" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Gate_In_Out">
+              <PropertyRef Name="FK_User" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Gate_In_Out_Topurpose_for_visit">
+          <End Role="Purpose_for_visit" Type="Self.Purpose_for_visit" Multiplicity="1" />
+          <End Role="Gate_In_Out" Type="Self.Gate_In_Out" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Purpose_for_visit">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Gate_In_Out">
+              <PropertyRef Name="FK_Purpose" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Gate_In_Out_ToVechicletype">
+          <End Role="Vechicle_Type" Type="Self.Vechicle_Type" Multiplicity="1" />
+          <End Role="Gate_In_Out" Type="Self.Gate_In_Out" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Vechicle_Type">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Gate_In_Out">
+              <PropertyRef Name="Vechicletype_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Users_To_Gender">
+          <End Role="Gender" Type="Self.Gender" Multiplicity="1" />
+          <End Role="Users" Type="Self.Users" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Gender">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Users">
+              <PropertyRef Name="FK_Gender" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="VTDI_Gatelog_dbModelStoreContainer">
+          <EntitySet Name="Gate_In_Out" EntityType="Self.Gate_In_Out" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Gender" EntityType="Self.Gender" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Item_to_declare" EntityType="Self.Item_to_declare" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Purpose_for_visit" EntityType="Self.Purpose_for_visit" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Vechicle_Type" EntityType="Self.Vechicle_Type" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Gate_In_Out_To_Item_to_declare" Association="Self.FK_Gate_In_Out_To_Item_to_declare">
+            <End Role="Item_to_declare" EntitySet="Item_to_declare" />
+            <End Role="Gate_In_Out" EntitySet="Gate_In_Out" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Gate_In_Out_To_user" Association="Self.FK_Gate_In_Out_To_user">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Gate_In_Out" EntitySet="Gate_In_Out" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Gate_In_Out_Topurpose_for_visit" Association="Self.FK_Gate_In_Out_Topurpose_for_visit">
+            <End Role="Purpose_for_visit" EntitySet="Purpose_for_visit" />
+            <End Role="Gate_In_Out" EntitySet="Gate_In_Out" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Gate_In_Out_ToVechicletype" Association="Self.FK_Gate_In_Out_ToVechicletype">
+            <End Role="Vechicle_Type" EntitySet="Vechicle_Type" />
+            <End Role="Gate_In_Out" EntitySet="Gate_In_Out" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Users_To_Gender" Association="Self.FK_Users_To_Gender">
+            <End Role="Gender" EntitySet="Gender" />
+            <End Role="Users" EntitySet="Users" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="VTDI_Gatelog_dbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Gate_In_Out">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="First_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Last_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Plate_numder" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DateTime_IN" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DateTime_Out" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Vechicletype_ID" Type="Int32" Nullable="false" />
+          <Property Name="FK_Purpose" Type="Int32" Nullable="false" />
+          <Property Name="FK_Item_to_Declare" Type="Int32" Nullable="false" />
+          <Property Name="FK_User" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Item_to_declare" Relationship="Self.FK_Gate_In_Out_To_Item_to_declare" FromRole="Gate_In_Out" ToRole="Item_to_declare" />
+          <NavigationProperty Name="User" Relationship="Self.FK_Gate_In_Out_To_user" FromRole="Gate_In_Out" ToRole="Users" />
+          <NavigationProperty Name="Purpose_for_visit" Relationship="Self.FK_Gate_In_Out_Topurpose_for_visit" FromRole="Gate_In_Out" ToRole="Purpose_for_visit" />
+          <NavigationProperty Name="Vechicle_Type" Relationship="Self.FK_Gate_In_Out_ToVechicletype" FromRole="Gate_In_Out" ToRole="Vechicle_Type" />
+        </EntityType>
+        <EntityType Name="Gender">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="GenderName" Type="String" MaxLength="7" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Users" Relationship="Self.FK_Users_To_Gender" FromRole="Gender" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="Item_to_declare">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Gate_In_Out" Relationship="Self.FK_Gate_In_Out_To_Item_to_declare" FromRole="Item_to_declare" ToRole="Gate_In_Out" />
+        </EntityType>
+        <EntityType Name="Purpose_for_visit">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Gate_In_Out" Relationship="Self.FK_Gate_In_Out_Topurpose_for_visit" FromRole="Purpose_for_visit" ToRole="Gate_In_Out" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DateCreated" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="FK_Gender" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Gate_In_Out" Relationship="Self.FK_Gate_In_Out_To_user" FromRole="Users" ToRole="Gate_In_Out" />
+          <NavigationProperty Name="Gender" Relationship="Self.FK_Users_To_Gender" FromRole="Users" ToRole="Gender" />
+        </EntityType>
+        <EntityType Name="Vechicle_Type">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="V_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Gate_In_Out" Relationship="Self.FK_Gate_In_Out_ToVechicletype" FromRole="Vechicle_Type" ToRole="Gate_In_Out" />
+        </EntityType>
+        <Association Name="FK_Gate_In_Out_To_Item_to_declare">
+          <End Role="Item_to_declare" Type="Self.Item_to_declare" Multiplicity="1" />
+          <End Role="Gate_In_Out" Type="Self.Gate_In_Out" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Item_to_declare">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Gate_In_Out">
+              <PropertyRef Name="FK_Item_to_Declare" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Gate_In_Out_To_user">
+          <End Role="Users" Type="Self.User" Multiplicity="1" />
+          <End Role="Gate_In_Out" Type="Self.Gate_In_Out" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Gate_In_Out">
+              <PropertyRef Name="FK_User" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Gate_In_Out_Topurpose_for_visit">
+          <End Role="Purpose_for_visit" Type="Self.Purpose_for_visit" Multiplicity="1" />
+          <End Role="Gate_In_Out" Type="Self.Gate_In_Out" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Purpose_for_visit">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Gate_In_Out">
+              <PropertyRef Name="FK_Purpose" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Gate_In_Out_ToVechicletype">
+          <End Role="Vechicle_Type" Type="Self.Vechicle_Type" Multiplicity="1" />
+          <End Role="Gate_In_Out" Type="Self.Gate_In_Out" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Vechicle_Type">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Gate_In_Out">
+              <PropertyRef Name="Vechicletype_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Users_To_Gender">
+          <End Role="Gender" Type="Self.Gender" Multiplicity="1" />
+          <End Role="Users" Type="Self.User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Gender">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Users">
+              <PropertyRef Name="FK_Gender" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="VTDI_Gatelog_dbEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Gate_In_Out" EntityType="Self.Gate_In_Out" />
+          <EntitySet Name="Genders" EntityType="Self.Gender" />
+          <EntitySet Name="Item_to_declare" EntityType="Self.Item_to_declare" />
+          <EntitySet Name="Purpose_for_visit" EntityType="Self.Purpose_for_visit" />
+          <EntitySet Name="Users" EntityType="Self.User" />
+          <EntitySet Name="Vechicle_Type" EntityType="Self.Vechicle_Type" />
+          <AssociationSet Name="FK_Gate_In_Out_To_Item_to_declare" Association="Self.FK_Gate_In_Out_To_Item_to_declare">
+            <End Role="Item_to_declare" EntitySet="Item_to_declare" />
+            <End Role="Gate_In_Out" EntitySet="Gate_In_Out" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Gate_In_Out_To_user" Association="Self.FK_Gate_In_Out_To_user">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Gate_In_Out" EntitySet="Gate_In_Out" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Gate_In_Out_Topurpose_for_visit" Association="Self.FK_Gate_In_Out_Topurpose_for_visit">
+            <End Role="Purpose_for_visit" EntitySet="Purpose_for_visit" />
+            <End Role="Gate_In_Out" EntitySet="Gate_In_Out" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Gate_In_Out_ToVechicletype" Association="Self.FK_Gate_In_Out_ToVechicletype">
+            <End Role="Vechicle_Type" EntitySet="Vechicle_Type" />
+            <End Role="Gate_In_Out" EntitySet="Gate_In_Out" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Users_To_Gender" Association="Self.FK_Users_To_Gender">
+            <End Role="Gender" EntitySet="Genders" />
+            <End Role="Users" EntitySet="Users" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="VTDI_Gatelog_dbModelStoreContainer" CdmEntityContainer="VTDI_Gatelog_dbEntities">
+          <EntitySetMapping Name="Gate_In_Out">
+            <EntityTypeMapping TypeName="VTDI_Gatelog_dbModel.Gate_In_Out">
+              <MappingFragment StoreEntitySet="Gate_In_Out">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="First_Name" ColumnName="First_Name" />
+                <ScalarProperty Name="Last_Name" ColumnName="Last_Name" />
+                <ScalarProperty Name="Plate_numder" ColumnName="Plate_numder" />
+                <ScalarProperty Name="DateTime_IN" ColumnName="DateTime_IN" />
+                <ScalarProperty Name="DateTime_Out" ColumnName="DateTime_Out" />
+                <ScalarProperty Name="Vechicletype_ID" ColumnName="Vechicletype_ID" />
+                <ScalarProperty Name="FK_Purpose" ColumnName="FK_Purpose" />
+                <ScalarProperty Name="FK_Item_to_Declare" ColumnName="FK_Item_to_Declare" />
+                <ScalarProperty Name="FK_User" ColumnName="FK_User" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Genders">
+            <EntityTypeMapping TypeName="VTDI_Gatelog_dbModel.Gender">
+              <MappingFragment StoreEntitySet="Gender">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="GenderName" ColumnName="GenderName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Item_to_declare">
+            <EntityTypeMapping TypeName="VTDI_Gatelog_dbModel.Item_to_declare">
+              <MappingFragment StoreEntitySet="Item_to_declare">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Purpose_for_visit">
+            <EntityTypeMapping TypeName="VTDI_Gatelog_dbModel.Purpose_for_visit">
+              <MappingFragment StoreEntitySet="Purpose_for_visit">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="VTDI_Gatelog_dbModel.User">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+                <ScalarProperty Name="FK_Gender" ColumnName="FK_Gender" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Vechicle_Type">
+            <EntityTypeMapping TypeName="VTDI_Gatelog_dbModel.Vechicle_Type">
+              <MappingFragment StoreEntitySet="Vechicle_Type">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="V_Name" ColumnName="V_Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

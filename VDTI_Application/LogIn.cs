@@ -30,7 +30,8 @@ namespace VDTI_Application
             { 
                 MessageBox.Show("Welcome "+UserName);
                 var parent = (Form1)this.MdiParent;
-               
+                //Change the property in Form1 to true.
+                parent.isLoggedIn = true;
                 this.Close();
             }
         }

@@ -29,6 +29,13 @@
         private void InitializeComponent()
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker4 = new System.Windows.Forms.DateTimePicker();
+            this.tbplatenum = new System.Windows.Forms.TextBox();
+            this.tbpurpose = new System.Windows.Forms.TextBox();
+            this.tbvectype = new System.Windows.Forms.TextBox();
+            this.tblname = new System.Windows.Forms.TextBox();
             this.lbPurpose = new System.Windows.Forms.Label();
             this.lbvehtype = new System.Windows.Forms.Label();
             this.lblname = new System.Windows.Forms.Label();
@@ -38,24 +45,17 @@
             this.lbplatenum = new System.Windows.Forms.Label();
             this.lbitemtodeclear = new System.Windows.Forms.Label();
             this.tbfname = new System.Windows.Forms.TextBox();
-            this.tbplatenum = new System.Windows.Forms.TextBox();
-            this.tbpurpose = new System.Windows.Forms.TextBox();
-            this.tbvectype = new System.Windows.Forms.TextBox();
-            this.tblname = new System.Windows.Forms.TextBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker4 = new System.Windows.Forms.DateTimePicker();
             this.ccbtodeclear = new System.Windows.Forms.CheckedListBox();
             this.lbgeteinout = new System.Windows.Forms.Label();
             this.btnupdate = new System.Windows.Forms.Button();
             this.btnsave = new System.Windows.Forms.Button();
             this.btnclear = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
-            this.flowLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
+            this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -64,7 +64,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34.35897F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 65.64103F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 162F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 277F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 278F));
             this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel2, 3, 1);
             this.tableLayoutPanel1.Controls.Add(this.tbplatenum, 3, 2);
             this.tableLayoutPanel1.Controls.Add(this.tbpurpose, 1, 3);
@@ -90,6 +90,67 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 162F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(830, 276);
             this.tableLayoutPanel1.TabIndex = 0;
+            // 
+            // flowLayoutPanel2
+            // 
+            this.flowLayoutPanel2.Controls.Add(this.dateTimePicker3);
+            this.flowLayoutPanel2.Controls.Add(this.dateTimePicker4);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(554, 32);
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(272, 31);
+            this.flowLayoutPanel2.TabIndex = 12;
+            // 
+            // dateTimePicker3
+            // 
+            this.dateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker3.Location = new System.Drawing.Point(3, 3);
+            this.dateTimePicker3.Name = "dateTimePicker3";
+            this.dateTimePicker3.Size = new System.Drawing.Size(103, 20);
+            this.dateTimePicker3.TabIndex = 0;
+            // 
+            // dateTimePicker4
+            // 
+            this.dateTimePicker4.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker4.Location = new System.Drawing.Point(112, 3);
+            this.dateTimePicker4.Name = "dateTimePicker4";
+            this.dateTimePicker4.Size = new System.Drawing.Size(103, 20);
+            this.dateTimePicker4.TabIndex = 1;
+            // 
+            // tbplatenum
+            // 
+            this.tbplatenum.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbplatenum.Location = new System.Drawing.Point(554, 75);
+            this.tbplatenum.Margin = new System.Windows.Forms.Padding(3, 8, 3, 3);
+            this.tbplatenum.Name = "tbplatenum";
+            this.tbplatenum.Size = new System.Drawing.Size(220, 26);
+            this.tbplatenum.TabIndex = 7;
+            // 
+            // tbpurpose
+            // 
+            this.tbpurpose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbpurpose.Location = new System.Drawing.Point(136, 116);
+            this.tbpurpose.Multiline = true;
+            this.tbpurpose.Name = "tbpurpose";
+            this.tbpurpose.Size = new System.Drawing.Size(220, 154);
+            this.tbpurpose.TabIndex = 8;
+            // 
+            // tbvectype
+            // 
+            this.tbvectype.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbvectype.Location = new System.Drawing.Point(136, 75);
+            this.tbvectype.Margin = new System.Windows.Forms.Padding(3, 8, 3, 3);
+            this.tbvectype.Name = "tbvectype";
+            this.tbvectype.Size = new System.Drawing.Size(220, 26);
+            this.tbvectype.TabIndex = 9;
+            // 
+            // tblname
+            // 
+            this.tblname.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tblname.Location = new System.Drawing.Point(136, 37);
+            this.tblname.Margin = new System.Windows.Forms.Padding(3, 8, 3, 3);
+            this.tblname.Name = "tblname";
+            this.tblname.Size = new System.Drawing.Size(220, 26);
+            this.tblname.TabIndex = 10;
             // 
             // lbPurpose
             // 
@@ -144,7 +205,7 @@
             this.lbtimeinout.AutoSize = true;
             this.lbtimeinout.Font = new System.Drawing.Font("Modern No. 20", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbtimeinout.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lbtimeinout.Location = new System.Drawing.Point(393, 6);
+            this.lbtimeinout.Location = new System.Drawing.Point(392, 6);
             this.lbtimeinout.Margin = new System.Windows.Forms.Padding(3, 6, 3, 0);
             this.lbtimeinout.Name = "lbtimeinout";
             this.lbtimeinout.Size = new System.Drawing.Size(122, 21);
@@ -156,7 +217,7 @@
             this.lbdateinout.AutoSize = true;
             this.lbdateinout.Font = new System.Drawing.Font("Modern No. 20", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbdateinout.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lbdateinout.Location = new System.Drawing.Point(393, 35);
+            this.lbdateinout.Location = new System.Drawing.Point(392, 35);
             this.lbdateinout.Margin = new System.Windows.Forms.Padding(3, 6, 3, 0);
             this.lbdateinout.Name = "lbdateinout";
             this.lbdateinout.Size = new System.Drawing.Size(119, 21);
@@ -168,7 +229,7 @@
             this.lbplatenum.AutoSize = true;
             this.lbplatenum.Font = new System.Drawing.Font("Modern No. 20", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbplatenum.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lbplatenum.Location = new System.Drawing.Point(393, 73);
+            this.lbplatenum.Location = new System.Drawing.Point(392, 73);
             this.lbplatenum.Margin = new System.Windows.Forms.Padding(3, 6, 3, 0);
             this.lbplatenum.Name = "lbplatenum";
             this.lbplatenum.Size = new System.Drawing.Size(129, 21);
@@ -180,7 +241,7 @@
             this.lbitemtodeclear.AutoSize = true;
             this.lbitemtodeclear.Font = new System.Drawing.Font("Modern No. 20", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbitemtodeclear.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lbitemtodeclear.Location = new System.Drawing.Point(393, 119);
+            this.lbitemtodeclear.Location = new System.Drawing.Point(392, 119);
             this.lbitemtodeclear.Margin = new System.Windows.Forms.Padding(3, 6, 3, 0);
             this.lbitemtodeclear.Name = "lbitemtodeclear";
             this.lbitemtodeclear.Size = new System.Drawing.Size(152, 21);
@@ -190,53 +251,17 @@
             // tbfname
             // 
             this.tbfname.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbfname.Location = new System.Drawing.Point(137, 8);
+            this.tbfname.Location = new System.Drawing.Point(136, 8);
             this.tbfname.Margin = new System.Windows.Forms.Padding(3, 8, 3, 3);
             this.tbfname.Name = "tbfname";
             this.tbfname.Size = new System.Drawing.Size(220, 26);
             this.tbfname.TabIndex = 6;
             // 
-            // tbplatenum
-            // 
-            this.tbplatenum.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbplatenum.Location = new System.Drawing.Point(555, 75);
-            this.tbplatenum.Margin = new System.Windows.Forms.Padding(3, 8, 3, 3);
-            this.tbplatenum.Name = "tbplatenum";
-            this.tbplatenum.Size = new System.Drawing.Size(220, 26);
-            this.tbplatenum.TabIndex = 7;
-            // 
-            // tbpurpose
-            // 
-            this.tbpurpose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbpurpose.Location = new System.Drawing.Point(137, 116);
-            this.tbpurpose.Multiline = true;
-            this.tbpurpose.Name = "tbpurpose";
-            this.tbpurpose.Size = new System.Drawing.Size(220, 154);
-            this.tbpurpose.TabIndex = 8;
-            // 
-            // tbvectype
-            // 
-            this.tbvectype.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbvectype.Location = new System.Drawing.Point(137, 75);
-            this.tbvectype.Margin = new System.Windows.Forms.Padding(3, 8, 3, 3);
-            this.tbvectype.Name = "tbvectype";
-            this.tbvectype.Size = new System.Drawing.Size(220, 26);
-            this.tbvectype.TabIndex = 9;
-            // 
-            // tblname
-            // 
-            this.tblname.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tblname.Location = new System.Drawing.Point(137, 37);
-            this.tblname.Margin = new System.Windows.Forms.Padding(3, 8, 3, 3);
-            this.tblname.Name = "tblname";
-            this.tblname.Size = new System.Drawing.Size(220, 26);
-            this.tblname.TabIndex = 10;
-            // 
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.Controls.Add(this.dateTimePicker1);
             this.flowLayoutPanel1.Controls.Add(this.dateTimePicker2);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(555, 3);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(554, 3);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(272, 23);
             this.flowLayoutPanel1.TabIndex = 11;
@@ -257,37 +282,12 @@
             this.dateTimePicker2.Size = new System.Drawing.Size(103, 20);
             this.dateTimePicker2.TabIndex = 1;
             // 
-            // flowLayoutPanel2
-            // 
-            this.flowLayoutPanel2.Controls.Add(this.dateTimePicker3);
-            this.flowLayoutPanel2.Controls.Add(this.dateTimePicker4);
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(555, 32);
-            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(272, 31);
-            this.flowLayoutPanel2.TabIndex = 12;
-            // 
-            // dateTimePicker3
-            // 
-            this.dateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker3.Location = new System.Drawing.Point(3, 3);
-            this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(103, 20);
-            this.dateTimePicker3.TabIndex = 0;
-            // 
-            // dateTimePicker4
-            // 
-            this.dateTimePicker4.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker4.Location = new System.Drawing.Point(112, 3);
-            this.dateTimePicker4.Name = "dateTimePicker4";
-            this.dateTimePicker4.Size = new System.Drawing.Size(103, 20);
-            this.dateTimePicker4.TabIndex = 1;
-            // 
             // ccbtodeclear
             // 
             this.ccbtodeclear.FormattingEnabled = true;
             this.ccbtodeclear.Items.AddRange(new object[] {
             "Laptop"});
-            this.ccbtodeclear.Location = new System.Drawing.Point(555, 116);
+            this.ccbtodeclear.Location = new System.Drawing.Point(554, 116);
             this.ccbtodeclear.Name = "ccbtodeclear";
             this.ccbtodeclear.Size = new System.Drawing.Size(220, 154);
             this.ccbtodeclear.TabIndex = 13;
@@ -349,8 +349,8 @@
             this.Text = "GateInOut";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel2.ResumeLayout(false);
+            this.flowLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
