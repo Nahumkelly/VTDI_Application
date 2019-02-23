@@ -64,7 +64,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34.35897F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 65.64103F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 162F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 278F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 279F));
             this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel2, 3, 1);
             this.tableLayoutPanel1.Controls.Add(this.tbplatenum, 3, 2);
             this.tableLayoutPanel1.Controls.Add(this.tbpurpose, 1, 3);
@@ -95,7 +95,7 @@
             // 
             this.flowLayoutPanel2.Controls.Add(this.dateTimePicker3);
             this.flowLayoutPanel2.Controls.Add(this.dateTimePicker4);
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(554, 32);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(553, 32);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             this.flowLayoutPanel2.Size = new System.Drawing.Size(272, 31);
             this.flowLayoutPanel2.TabIndex = 12;
@@ -119,7 +119,7 @@
             // tbplatenum
             // 
             this.tbplatenum.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbplatenum.Location = new System.Drawing.Point(554, 75);
+            this.tbplatenum.Location = new System.Drawing.Point(553, 75);
             this.tbplatenum.Margin = new System.Windows.Forms.Padding(3, 8, 3, 3);
             this.tbplatenum.Name = "tbplatenum";
             this.tbplatenum.Size = new System.Drawing.Size(220, 26);
@@ -205,7 +205,7 @@
             this.lbtimeinout.AutoSize = true;
             this.lbtimeinout.Font = new System.Drawing.Font("Modern No. 20", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbtimeinout.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lbtimeinout.Location = new System.Drawing.Point(392, 6);
+            this.lbtimeinout.Location = new System.Drawing.Point(391, 6);
             this.lbtimeinout.Margin = new System.Windows.Forms.Padding(3, 6, 3, 0);
             this.lbtimeinout.Name = "lbtimeinout";
             this.lbtimeinout.Size = new System.Drawing.Size(122, 21);
@@ -217,7 +217,7 @@
             this.lbdateinout.AutoSize = true;
             this.lbdateinout.Font = new System.Drawing.Font("Modern No. 20", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbdateinout.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lbdateinout.Location = new System.Drawing.Point(392, 35);
+            this.lbdateinout.Location = new System.Drawing.Point(391, 35);
             this.lbdateinout.Margin = new System.Windows.Forms.Padding(3, 6, 3, 0);
             this.lbdateinout.Name = "lbdateinout";
             this.lbdateinout.Size = new System.Drawing.Size(119, 21);
@@ -229,7 +229,7 @@
             this.lbplatenum.AutoSize = true;
             this.lbplatenum.Font = new System.Drawing.Font("Modern No. 20", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbplatenum.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lbplatenum.Location = new System.Drawing.Point(392, 73);
+            this.lbplatenum.Location = new System.Drawing.Point(391, 73);
             this.lbplatenum.Margin = new System.Windows.Forms.Padding(3, 6, 3, 0);
             this.lbplatenum.Name = "lbplatenum";
             this.lbplatenum.Size = new System.Drawing.Size(129, 21);
@@ -241,7 +241,7 @@
             this.lbitemtodeclear.AutoSize = true;
             this.lbitemtodeclear.Font = new System.Drawing.Font("Modern No. 20", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbitemtodeclear.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lbitemtodeclear.Location = new System.Drawing.Point(392, 119);
+            this.lbitemtodeclear.Location = new System.Drawing.Point(391, 119);
             this.lbitemtodeclear.Margin = new System.Windows.Forms.Padding(3, 6, 3, 0);
             this.lbitemtodeclear.Name = "lbitemtodeclear";
             this.lbitemtodeclear.Size = new System.Drawing.Size(152, 21);
@@ -261,7 +261,7 @@
             // 
             this.flowLayoutPanel1.Controls.Add(this.dateTimePicker1);
             this.flowLayoutPanel1.Controls.Add(this.dateTimePicker2);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(554, 3);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(553, 3);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(272, 23);
             this.flowLayoutPanel1.TabIndex = 11;
@@ -287,7 +287,7 @@
             this.ccbtodeclear.FormattingEnabled = true;
             this.ccbtodeclear.Items.AddRange(new object[] {
             "Laptop"});
-            this.ccbtodeclear.Location = new System.Drawing.Point(554, 116);
+            this.ccbtodeclear.Location = new System.Drawing.Point(553, 116);
             this.ccbtodeclear.Name = "ccbtodeclear";
             this.ccbtodeclear.Size = new System.Drawing.Size(220, 154);
             this.ccbtodeclear.TabIndex = 13;

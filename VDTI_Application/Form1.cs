@@ -59,5 +59,20 @@ namespace VDTI_Application
         {
             MessageBox.Show("Scheduling");
         }
+
+        private void guestListToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Gate List");
+        }
+
+        private void gateReportToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Get Report");
+        }
+
+        private void userLogsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("User Log");
+        }
     }
 }

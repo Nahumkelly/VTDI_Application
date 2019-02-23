@@ -5,12 +5,12 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="c5fbaf575cef4979bb5affafa051d880" Name="Diagram1">
-        <EntityTypeShape EntityType="VTDI_Gatelog_dbModel.Gate_In_Out" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="VTDI_Gatelog_dbModel.Gender" Width="1.5" PointX="0.625" PointY="1.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="VTDI_Gatelog_dbModel.Item_to_declare" Width="1.5" PointX="7.625" PointY="1.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="VTDI_Gatelog_dbModel.Purpose_for_visit" Width="1.5" PointX="0.5" PointY="3.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="VTDI_Gatelog_dbModel.User" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="VTDI_Gatelog_dbModel.Vechicle_Type" Width="1.5" PointX="7.625" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="VTDI_Gatelog_dbModel.Gate_In_Out" Width="1.5" PointX="5.25" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="VTDI_Gatelog_dbModel.Gender" Width="1.5" PointX="0.625" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="VTDI_Gatelog_dbModel.Item_to_declare" Width="1.5" PointX="7.625" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="VTDI_Gatelog_dbModel.Purpose_for_visit" Width="1.5" PointX="0.5" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="VTDI_Gatelog_dbModel.User" Width="1.5" PointX="3" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="VTDI_Gatelog_dbModel.Vechicle_Type" Width="1.5" PointX="7.625" PointY="3.125" IsExpanded="true" />
         <AssociationConnector Association="VTDI_Gatelog_dbModel.FK_Gate_In_Out_To_Item_to_declare" ManuallyRouted="false" />
         <AssociationConnector Association="VTDI_Gatelog_dbModel.FK_Gate_In_Out_To_user" ManuallyRouted="false" />
         <AssociationConnector Association="VTDI_Gatelog_dbModel.FK_Gate_In_Out_Topurpose_for_visit" ManuallyRouted="false" />

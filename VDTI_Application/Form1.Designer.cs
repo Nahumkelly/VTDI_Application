@@ -68,7 +68,7 @@
             // 
             this.logInToolStripMenuItem.Image = global::VDTI_Application.Properties.Resources.Login_16x_24;
             this.logInToolStripMenuItem.Name = "logInToolStripMenuItem";
-            this.logInToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.logInToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
             this.logInToolStripMenuItem.Text = "Log In";
             this.logInToolStripMenuItem.Click += new System.EventHandler(this.logInToolStripMenuItem_Click);
             // 
@@ -76,14 +76,14 @@
             // 
             this.userManagementToolStripMenuItem.Image = global::VDTI_Application.Properties.Resources.UserProfile_16x;
             this.userManagementToolStripMenuItem.Name = "userManagementToolStripMenuItem";
-            this.userManagementToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.userManagementToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
             this.userManagementToolStripMenuItem.Text = "User Management";
             this.userManagementToolStripMenuItem.Click += new System.EventHandler(this.userManagementToolStripMenuItem_Click);
             // 
             // schedulingToolStripMenuItem
             // 
             this.schedulingToolStripMenuItem.Name = "schedulingToolStripMenuItem";
-            this.schedulingToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.schedulingToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
             this.schedulingToolStripMenuItem.Text = "Scheduling";
             this.schedulingToolStripMenuItem.Click += new System.EventHandler(this.schedulingToolStripMenuItem_Click);
             // 
@@ -99,13 +99,14 @@
             // guestListToolStripMenuItem
             // 
             this.guestListToolStripMenuItem.Name = "guestListToolStripMenuItem";
-            this.guestListToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+            this.guestListToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.guestListToolStripMenuItem.Text = "Guest List";
+            this.guestListToolStripMenuItem.Click += new System.EventHandler(this.guestListToolStripMenuItem_Click);
             // 
             // gateInOutToolStripMenuItem
             // 
             this.gateInOutToolStripMenuItem.Name = "gateInOutToolStripMenuItem";
-            this.gateInOutToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+            this.gateInOutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.gateInOutToolStripMenuItem.Text = "Gate In / Out";
             this.gateInOutToolStripMenuItem.Click += new System.EventHandler(this.gateInOutToolStripMenuItem_Click);
             // 
@@ -121,14 +122,16 @@
             // gateReportToolStripMenuItem
             // 
             this.gateReportToolStripMenuItem.Name = "gateReportToolStripMenuItem";
-            this.gateReportToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
+            this.gateReportToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.gateReportToolStripMenuItem.Text = "Gate Report";
+            this.gateReportToolStripMenuItem.Click += new System.EventHandler(this.gateReportToolStripMenuItem_Click);
             // 
             // userLogsToolStripMenuItem
             // 
             this.userLogsToolStripMenuItem.Name = "userLogsToolStripMenuItem";
-            this.userLogsToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
+            this.userLogsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.userLogsToolStripMenuItem.Text = "User Logs";
+            this.userLogsToolStripMenuItem.Click += new System.EventHandler(this.userLogsToolStripMenuItem_Click);
             // 
             // Form1
             // 

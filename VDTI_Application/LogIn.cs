@@ -22,17 +22,22 @@ namespace VDTI_Application
             var UserName = tbusername.Text;
             var Password = tbpassword.Text;
 
-            if (UserName != "nahum" || Password != "password")
+            //Create an Object
+            //VTDI_Gatelog_dbEntities CTX = new VTDI_Gatelog_dbEntities();
+            var CTX = new VTDI_Gatelog_dbEntities();
+            var User = CTX.Users.Any(q => q.Username == UserName && q.Password == Password);
+
+            if (User == true)
             {
-                MessageBox.Show("Invalid User Name or Password");
-            }
-            else
-            { 
-                MessageBox.Show("Welcome "+UserName);
+                MessageBox.Show("Welcome " + UserName);
                 var parent = (Form1)this.MdiParent;
                 //Change the property in Form1 to true.
                 parent.isLoggedIn = true;
                 this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Invalid User Name or Password");
             }
         }
     }
